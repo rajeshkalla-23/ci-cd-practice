@@ -59,13 +59,13 @@ jobs:
 
       - name: Build Docker image
         run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/cicd-practice:latest .
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/cicd-practice:${{ github.sha }} .
+         docker build -t ${{ secrets.DOCKER_USERNAME }}/cicd-practice:latest .
+         docker build -t ${{ secrets.DOCKER_USERNAME }}/cicd-practice:${{ github.sha }} .
 
       - name: Push to Docker Hub
         run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/cicd-practice:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/cicd-practice:${{ github.sha }}
+         docker push ${{ secrets.DOCKER_USERNAME }}/cicd-practice:latest
+         docker push ${{ secrets.DOCKER_USERNAME }}/cicd-practice:${{ github.sha }}
 
       - name: Done
         run: echo "✅ Image pushed successfully!"
